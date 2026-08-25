@@ -81,6 +81,27 @@ end
 
 loadConfig()
 
+-- Auto-save: periodically checks for any config change and persists it,
+-- as a safety net on top of the existing explicit saveConfig() calls.
+local function configsMatch(a, b)
+	for k in pairs(DEFAULTS) do
+		if a[k] ~= b[k] then return false end
+	end
+	return true
+end
+
+local lastSavedConfig = table.clone(config)
+
+task.spawn(function()
+	while true do
+		task.wait(2)
+		if not configsMatch(config, lastSavedConfig) then
+			saveConfig()
+			lastSavedConfig = table.clone(config)
+		end
+	end
+end)
+
 local oldGui = playerGui:FindFirstChild("FaceBookHubMotionBlur")
 if oldGui then oldGui:Destroy() end
 
@@ -210,6 +231,25 @@ infinity.TextColor3 = C.white
 infinity.Font = Enum.Font.GothamBold
 infinity.TextSize = math.floor(UI_CUSTOM.floatingIconSize * 0.55)
 infinity.Parent = floating
+
+-- Animated infinity icon: gentle breathing pulse + subtle color cycle
+local infinityScale = Instance.new("UIScale")
+infinityScale.Scale = 1
+infinityScale.Parent = infinity
+
+local function pulseInfinity()
+	TweenService:Create(
+		infinityScale,
+		TweenInfo.new(1.4, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true),
+		{Scale = 1.18}
+	):Play()
+	TweenService:Create(
+		infinity,
+		TweenInfo.new(1.4, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true),
+		{TextColor3 = C.accent}
+	):Play()
+end
+pulseInfinity()
 
 local dot = Instance.new("Frame")
 dot.Size = UDim2.fromOffset(9,9)

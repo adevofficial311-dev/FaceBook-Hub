@@ -1,7 +1,3 @@
--- FaceBook Hub Motion Blur Controller
--- LocalScript for StarterPlayerScripts
--- Responsive UI • Hybrid mode • Unified intensity • Session auto-save
-
 local Players = game:GetService("Players")
 local Lighting = game:GetService("Lighting")
 local RunService = game:GetService("RunService")

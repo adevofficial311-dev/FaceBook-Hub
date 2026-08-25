@@ -89,7 +89,7 @@ local oldBlur = Lighting:FindFirstChild("FaceBookHubMotionBlurEffect")
 if oldBlur then oldBlur:Destroy() end
 
 local blur = Instance.new("BlurEffect")
-blur.Name = "FaceBookHubMotionBlurEffect"
+blur.Name = "MatizHubMotionBlur"
 blur.Size = 0
 blur.Parent = Lighting
 
@@ -275,7 +275,7 @@ local sub = Instance.new("TextLabel")
 sub.Size = UDim2.new(1,-90,0,20)
 sub.Position = UDim2.fromOffset(19,39)
 sub.BackgroundTransparency = 1
-sub.Text = "FaceBook Hub • Visual Effects"
+sub.Text = "Matiz Hub • Motion Controller"
 sub.TextColor3 = C.sub
 sub.Font = Enum.Font.Gotham
 sub.TextSize = 11

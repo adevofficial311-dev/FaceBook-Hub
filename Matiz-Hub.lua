@@ -9,7 +9,7 @@ local playerGui = player:WaitForChild("PlayerGui")
 
 local DEFAULTS = {
 	enabled = false,
-	mode = "Hybrid", -- Camera / Velocity / Acceleration / Hybrid
+	mode = "Hybrid", 
 	intensity = 0.65,
 	velocityThreshold = 18,
 	accelerationThreshold = 35,
@@ -23,20 +23,19 @@ local DEFAULTS = {
     accelerationEnabled = true,
 }
 
--- UI CUSTOMIZATION
--- Change these values to quickly resize the interface/icon.
+
+
 local UI_CUSTOM = {
-    scale = 1.00,              -- Overall UI size: 0.75 = smaller, 1.25 = larger
-    panelWidth = 350,          -- Main panel width
-    panelHeight = 455,         -- Visible panel height; content scrolls inside
-    floatingIconSize = 56,     -- Floating button/icon size
-    floatingRightOffset = 76,  -- Distance from right edge
+    scale = 1.00,              
+    panelWidth = 350,         
+    panelHeight = 455,         
+    floatingIconSize = 56,     
+    floatingRightOffset = 76,  
 }
 
 local config = table.clone(DEFAULTS)
 
--- Client-side auto-save for the current game session.
--- For persistence between separate sessions, use a server DataStore.
+
 local KEY = "FaceBookHub_MB_"
 
 local function saveConfig()
@@ -184,7 +183,7 @@ local function draggable(obj, handle)
 	end)
 end
 
--- Floating infinity button
+
 local floating = Instance.new("TextButton")
 floating.Size = UDim2.fromOffset(UI_CUSTOM.floatingIconSize,UI_CUSTOM.floatingIconSize)
 floating.Position = UDim2.new(1,-UI_CUSTOM.floatingRightOffset,0.5,-UI_CUSTOM.floatingIconSize/2)
@@ -254,7 +253,7 @@ gradient.Color = ColorSequence.new({
 })
 gradient.Parent = panel
 
--- Header / drag handle
+
 local header = Instance.new("Frame")
 header.Size = UDim2.new(1,0,0,70)
 header.BackgroundTransparency = 1
@@ -299,7 +298,7 @@ cc.Parent = close
 
 draggable(panel,header)
 
--- Scrollable settings area: the panel stays compact while all controls remain accessible.
+
 local content = Instance.new("ScrollingFrame")
 content.Size = UDim2.new(1,-20,1,-82)
 content.Position = UDim2.fromOffset(10,72)
@@ -328,7 +327,7 @@ list:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
     content.CanvasSize = UDim2.fromOffset(0, list.AbsoluteContentSize.Y + 18)
 end)
 
--- Toggle card
+
 local toggleCard = Instance.new("Frame")
 toggleCard.Size = UDim2.new(1,0,0,58)
 toggleCard.BackgroundColor3 = C.surface
@@ -385,7 +384,7 @@ local kcorner = Instance.new("UICorner")
 kcorner.CornerRadius = UDim.new(1,0)
 kcorner.Parent = knob
 
--- Mode + Hybrid source controls
+
 local modeCard = Instance.new("Frame")
 modeCard.Size = UDim2.new(1,0,0,178)
 modeCard.BackgroundColor3 = C.surface
@@ -521,7 +520,7 @@ for _,def in ipairs(hybridDefs) do
     end)
 end
 
--- Unified intensity slider
+
 local sliderCard = Instance.new("Frame")
 sliderCard.Size = UDim2.new(1,0,0,78)
 sliderCard.BackgroundColor3 = C.surface
@@ -623,7 +622,7 @@ UserInputService.InputEnded:Connect(function(input)
 	end
 end)
 
--- Hybrid individual controls
+
 local function makeHybridSlider(titleText, key, order)
     local card = Instance.new("Frame")
     card.Size = UDim2.new(1,0,0,62)
@@ -790,7 +789,7 @@ refreshUI = function()
 	end
 end
 
--- Render / blur engine
+
 local function getHRP()
 	local character = player.Character
 	return character and character:FindFirstChild("HumanoidRootPart")
@@ -845,7 +844,7 @@ RunService.RenderStepped:Connect(function(dt)
 	elseif config.mode == "Acceleration" then
 		raw = accAmount
 	else
-		-- Hybrid = each source can be enabled/disabled independently.
+		
 		raw = 0
 		if config.cameraEnabled then raw += camAmount end
 		if config.velocityEnabled then raw += velAmount end

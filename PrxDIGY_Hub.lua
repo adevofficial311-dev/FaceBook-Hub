@@ -38,7 +38,7 @@ local function guiParent()
 end
 
 pcall(function()
-    local old = guiParent():FindFirstChild("PrxDIGYFruitEdition")
+    local old = guiParent():FindFirstChild("PrxDIGY")
     if old then old:Destroy() end
 end)
 
@@ -90,7 +90,7 @@ local function label(parent, value, size, bold)
 end
 
 local Screen = Instance.new("ScreenGui")
-Screen.Name = "PrxDIGYFruitEdition"
+Screen.Name = "By The Prodigy Himself"
 Screen.ResetOnSpawn = false
 Screen.IgnoreGuiInset = true
 Screen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -197,7 +197,7 @@ logoText.TextXAlignment = Enum.TextXAlignment.Center
 logoText.TextYAlignment = Enum.TextYAlignment.Center
 logoText.Size = UDim2.new(1, 0, 1, 0)
 
-local eyebrow = label(Header, "PRXDIGY  /  FRUIT TOOLS", 9, true)
+local eyebrow = label(Header, "PRXDIGY  /  FRUIT FINDER", 9, true)
 eyebrow.TextColor3 = Theme.red2
 eyebrow.Position = UDim2.new(0, 88, 0, 17)
 eyebrow.Size = UDim2.new(0, 420, 0, 13)
@@ -206,7 +206,7 @@ local title = label(Header, "PrxDIGY", 26, true)
 title.Position = UDim2.new(0, 88, 0, 27)
 title.Size = UDim2.new(0, 420, 0, 26)
 
-local subtitle = label(Header, "Fruit utility suite", 10, false)
+local subtitle = label(Header, "Use It Wisely", 10, false)
 subtitle.TextColor3 = Theme.muted
 subtitle.Position = UDim2.new(0, 88, 0, 54)
 subtitle.Size = UDim2.new(0, 460, 0, 17)
@@ -590,7 +590,7 @@ addToggle(QuickBody, "Tween To Fruit", TweenToFruit, function(v)
     setModule("tween", v)
 end)
 
-addButton(QuickBody, "Grab All Fruits Now", function()
+addButton(QuickBody, "Grab All Fruits Now •Risky•", function()
     local root = getRoot()
     if not root then return end
     local count = 0
@@ -1083,7 +1083,7 @@ closeButton.MouseButton1Click:Connect(function()
     saveConfig(); Screen:Destroy()
 end)
 
-local footer = label(Main, "PRXDIGY HUB  •  FRUIT TOOLS", 8, true)
+local footer = label(Main, "PRXDIGY HUB  •  FREEMIUM", 8, true)
 footer.TextColor3 = Theme.muted
 footer.Position = UDim2.new(0, 24, 1, -31)
 footer.Size = UDim2.new(1, -48, 0, 16)
@@ -1107,4 +1107,4 @@ UserInputService.InputEnded:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then dragging = false end
 end)
 
--- Startup notification removed
+

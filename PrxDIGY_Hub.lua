@@ -504,10 +504,10 @@ local ManageCard, ManageBody = makeCard(Content, "Inventory & Snipe", "Rarity an
 
 local RarityFruits = {
     Common = {"Rocket Fruit","Spin Fruit","Blade Fruit","Spring Fruit","Bomb Fruit","Smoke Fruit","Spike Fruit"},
-    Uncommon = {"Flame Fruit","Falcon Fruit","Ice Fruit","Sand Fruit","Diamond Fruit","Dark Fruit"},
-    Rare = {"Light Fruit","Rubber Fruit","Barrier Fruit","Ghost Fruit","Magma Fruit"},
-    Legendary = {"Quake Fruit","Buddha Fruit","Love Fruit","Spider Fruit","Sound Fruit","Phoenix Fruit","Portal Fruit","Rumble Fruit","Pain Fruit","Blizzard Fruit"},
-    Mythical = {"Gravity Fruit","Mammoth Fruit","T-Rex Fruit","Dough Fruit","Shadow Fruit","Venom Fruit","Control Fruit","Gas Fruit","Spirit Fruit","Leopard Fruit","Yeti Fruit","Kitsune Fruit","Dragon Fruit"}
+    Uncommon = {"Flame Fruit","Eagle Fruit","Ice Fruit","Sand Fruit","Diamond Fruit","Dark Fruit"},
+    Rare = {"Light Fruit","Rubber Fruit","Ghost Fruit","Magma Fruit"},
+    Legendary = {"Quake Fruit","Buddha Fruit","Creation Fruit","Love Fruit","Spider Fruit","Sound Fruit","Phoenix Fruit","Portal Fruit","Lightning Fruit","Pain Fruit","Blizzard Fruit"},
+    Mythical = {"Gravity Fruit","Mammoth Fruit","T-Rex Fruit","Dough Fruit","Shadow Fruit","Venom Fruit","Control Fruit","Gas Fruit","Spirit Fruit","Tiger Fruit","Yeti Fruit","Kitsune Fruit","Dragon Fruit"}
 }
 local rarityOrder = {"Common","Uncommon","Rare","Legendary","Mythical"}
 local rarityOptions = {"Common - Mythical","Uncommon - Mythical","Rare - Mythical","Legendary - Mythical","Mythical"}

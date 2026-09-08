@@ -197,7 +197,7 @@ logoText.TextXAlignment = Enum.TextXAlignment.Center
 logoText.TextYAlignment = Enum.TextYAlignment.Center
 logoText.Size = UDim2.new(1, 0, 1, 0)
 
-local eyebrow = label(Header, "PRXDIGY  /  FRUIT TOOLS", 9, true)
+local eyebrow = label(Header, "PRXDIGY  /  FRUIT FINDER", 9, true)
 eyebrow.TextColor3 = Theme.red2
 eyebrow.Position = UDim2.new(0, 88, 0, 17)
 eyebrow.Size = UDim2.new(0, 420, 0, 13)
@@ -206,7 +206,7 @@ local title = label(Header, "PrxDIGY", 26, true)
 title.Position = UDim2.new(0, 88, 0, 27)
 title.Size = UDim2.new(0, 420, 0, 26)
 
-local subtitle = label(Header, "Fruit utility suite", 10, false)
+local subtitle = label(Header, "Hey There Peasants", 10, false)
 subtitle.TextColor3 = Theme.muted
 subtitle.Position = UDim2.new(0, 88, 0, 54)
 subtitle.Size = UDim2.new(0, 460, 0, 17)
@@ -504,10 +504,10 @@ local ManageCard, ManageBody = makeCard(Content, "Inventory & Snipe", "Rarity an
 
 local RarityFruits = {
     Common = {"Rocket Fruit","Blade Fruit","Spring Fruit","Bomb Fruit","Smoke Fruit","Spike Fruit"},
-    Uncommon = {"Flame Fruit","Falcon Fruit","Ice Fruit","Sand Fruit","Diamond Fruit","Dark Fruit"},
-    Rare = {"Light Fruit","Rubber Fruit","Barrier Fruit","Ghost Fruit","Magma Fruit"},
-    Legendary = {"Quake Fruit","Buddha Fruit","Love Fruit","Spider Fruit","Sound Fruit","Phoenix Fruit","Portal Fruit","Rumble Fruit","Pain Fruit","Blizzard Fruit"},
-    Mythical = {"Gravity Fruit","Mammoth Fruit","T-Rex Fruit","Dough Fruit","Shadow Fruit","Venom Fruit","Control Fruit","Gas Fruit","Spirit Fruit","Leopard Fruit","Yeti Fruit","Kitsune Fruit","Dragon Fruit"}
+    Uncommon = {"Flame Fruit","Eagle Fruit","Ice Fruit","Sand Fruit","Diamond Fruit","Dark Fruit"},
+    Rare = {"Light Fruit","Rubber Fruit","Ghost Fruit","Magma Fruit"},
+    Legendary = {"Quake Fruit","Buddha Fruit","Creation Fruit","Love Fruit","Spider Fruit","Sound Fruit","Phoenix Fruit","Portal Fruit","Lightning Fruit","Pain Fruit","Blizzard Fruit"},
+    Mythical = {"Gravity Fruit","Magnet Fruit","Mammoth Fruit","T-Rex Fruit","Dough Fruit","Shadow Fruit","Venom Fruit","Control Fruit","Gas Fruit","Spirit Fruit","Tiger Fruit","Yeti Fruit","Kitsune Fruit","Dragon Fruit"}
 }
 local rarityOrder = {"Common","Uncommon","Rare","Legendary","Mythical"}
 local rarityOptions = {"Common - Mythical","Uncommon - Mythical","Rare - Mythical","Legendary - Mythical","Mythical"}
@@ -1141,7 +1141,7 @@ closeButton.MouseButton1Click:Connect(function()
     saveConfig(); Screen:Destroy()
 end)
 
-local footer = label(Main, "PRXDIGY HUB  •  FRUIT TOOLS", 8, true)
+local footer = label(Main, "PRXDIGY HUB  •  FREEMIUM", 8, true)
 footer.TextColor3 = Theme.muted
 footer.Position = UDim2.new(0, 24, 1, -31)
 footer.Size = UDim2.new(1, -48, 0, 16)
@@ -1164,5 +1164,3 @@ end)
 UserInputService.InputEnded:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then dragging = false end
 end)
-
--- Startup notification removed
